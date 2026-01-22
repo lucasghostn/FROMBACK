@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>FROMBACK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonte estilo anos 2000 / TRON -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="grid-bg"></div>
+
+  <main class="container">
+    <h1 class="logo">FROMBACK</h1>
+    <p class="subtitle">Transmitindo arquivos pelo vazio digital</p>
+
+    <!-- HOME -->
+    <section id="home">
+      <button class="neon-btn" onclick="showSend()">ENVIAR</button>
+    </section>
+
+    <!-- ENVIAR -->
+    <section id="send" class="hidden">
+      <h2>Enviar arquivo</h2>
+
+      <!-- FORMULÁRIO OBRIGATÓRIO PARA EMAILJS -->
+      <form id="sendForm">
+
+        <input
+          type="text"
+          name="from_name"
+          id="fromName"
+          placeholder="Seu nome (ex: João)"
+          required
+        >
+
+        <input
+          type="email"
+          name="to_email"
+          id="toEmail"
+          placeholder="Email do destinatário (ex: maria@gmail.com)"
+          required
+        >
+
+        <input
+          type="file"
+          name="attachment"
+          id="fileInput"
+          required
+        >
+
+        <button type="submit" class="neon-btn">
+          TRANSMITIR
+        </button>
+
+      </form>
+
+      <button class="ghost-btn" onclick="backHome()">VOLTAR</button>
+    </section>
+
+    <!-- STATUS -->
+    <section id="status" class="hidden">
+      <p id="statusText"></p>
+      <button class="ghost-btn" onclick="backHome()">VOLTAR AO INÍCIO</button>
+    </section>
+  </main>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+
+</body>
+</html>
