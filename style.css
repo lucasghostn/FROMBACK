@@ -1,0 +1,166 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* FUNDO GERAL */
+body {
+  background: radial-gradient(circle at center, #020b16, #000);
+  color: #00ffff;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* GRID TRON ANOS 2000 */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridMove 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 0 400px; }
+}
+
+/* CONTAINER CENTRAL */
+.container {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 30px;
+  border: 2px solid #00ffff;
+  background: rgba(0, 10, 20, 0.9);
+  box-shadow:
+    0 0 15px #00ffff,
+    inset 0 0 15px rgba(0,255,255,0.3);
+  text-align: center;
+}
+
+/* LOGO */
+.logo {
+  font-size: 42px;
+  letter-spacing: 4px;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 15px #00ffff;
+  margin-bottom: 10px;
+}
+
+/* SUBTÍTULO */
+.subtitle {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+/* SEÇÕES */
+section {
+  animation: fadeIn 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* INPUTS */
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #000;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  outline: none;
+  box-shadow: inset 0 0 10px rgba(0,255,255,0.2);
+}
+
+input::placeholder {
+  color: rgba(0,255,255,0.5);
+}
+
+/* BOTÃO NEON */
+.neon-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-shadow: 0 0 5px #00ffff;
+  box-shadow:
+    0 0 10px #00ffff,
+    inset 0 0 10px rgba(0,255,255,0.3);
+  transition: all 0.2s ease;
+}
+
+.neon-btn:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow:
+    0 0 25px #00ffff,
+    0 0 50px #00ffff;
+}
+
+/* BOTÃO FANTASMA */
+.ghost-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: transparent;
+  border: 1px dashed rgba(0,255,255,0.5);
+  color: rgba(0,255,255,0.8);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.ghost-btn:hover {
+  color: #00ffff;
+  border-color: #00ffff;
+}
+
+/* STATUS */
+#statusText {
+  margin-top: 20px;
+  font-size: 14px;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+/* SCANLINES (EFEITO CRT) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 999;
+}
