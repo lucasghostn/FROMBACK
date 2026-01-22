@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Enviar · FROMBACK</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h2>Enviar arquivo</h2>
+
+  <input type="text" id="sender" placeholder="Seu nome">
+  <input type="text" id="receiver" placeholder="Quem vai receber">
+  <input type="file" id="file">
+
+  <button onclick="sendFile()">Enviar</button>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+
+  <!-- App -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>
