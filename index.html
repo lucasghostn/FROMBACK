@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>FROMBACK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonte TRON -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="grid-bg"></div>
+
+  <main class="container">
+    <h1 class="logo">FROMBACK</h1>
+    <p class="subtitle">Transmitindo arquivos pelo vazio digital</p>
+
+    <!-- HOME -->
+    <section id="home">
+      <button class="neon-btn" onclick="showSend()">ENVIAR ARQUIVO</button>
+    </section>
+
+    <!-- ENVIAR -->
+    <section id="send" class="hidden">
+      <h2>Enviar arquivo</h2>
+
+      <!-- FORMULÁRIO (ESSENCIAL) -->
+      <form id="emailForm">
+
+        <input
+          id="fromName"
+          name="from_name"
+          type="text"
+          placeholder="Seu nome (ex: João)"
+          required
+        >
+
+        <input
+          id="toEmail"
+          name="to_email"
+          type="email"
+          placeholder="Email do destinatário"
+          required
+        >
+
+        <input
+          id="fileInput"
+          name="attachment"
+          type="file"
+          required
+        >
+
+        <button type="submit" class="neon-btn">
+          TRANSMITIR
+        </button>
+
+        <button type="button" class="ghost-btn" onclick="backHome()">
+          VOLTAR
+        </button>
+
+      </form>
+    </section>
+
+    <!-- STATUS -->
+    <section id="status" class="hidden">
+      <p id="statusText"></p>
+
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <p id="progressPercent">0%</p>
+
+      <button class="ghost-btn" onclick="backHome()">VOLTAR AO INÍCIO</button>
+    </section>
+  </main>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+
+</body>
+</html>
